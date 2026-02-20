@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="si" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trincomalee History - Timeless Legacy</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Iskoola+Pota:wght@400;700&family=Noto+Sans+Sinhala:wght@400;600;700&family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cormorant Garamond', 'serif'],
+                        serif: ['Cinzel', 'serif'],
+                        sinhala: ['"Iskoola Pota"', '"Noto Sans Sinhala"', 'sans-serif'],
+                    },
+                    colors: {
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#d97706',
+                            900: '#78350f',
+                        },
+                        antique: {
+                            100: '#f5f5f4',
+                            800: '#292524',
+                            900: '#1c1917',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1c1917;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #d97706;
+            border-radius: 4px;
+        }
+
+        .bg-parchment {
+            background-color: #1c1917;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23292524' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Timeline styling */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, #d97706, transparent);
+            transform: translateX(-50%);
+        }
+
+        @media screen and (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+        }
+
+        .golden-glow {
+            box-shadow: 0 0 20px rgba(251, 191, 36, 0.2);
+        }
+
+        /* Google Translate Styling */
+        .goog-te-banner-frame {
+            display: none !important;
+        }
+
+        body {
+            top: 0 !important;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-parchment min-h-screen text-antique-100 font-sans selection:bg-gold-900 selection:text-white overflow-x-hidden">
+
+    <!-- Preloader -->
+    <div id="preloader"
+        class="fixed inset-0 z-[100] bg-antique-900 flex flex-col items-center justify-center transition-opacity duration-1000">
+        <div class="relative w-24 h-24 mb-4">
+            <div class="absolute inset-0 border-4 border-antique-800 rounded-full"></div>
+            <div
+                class="absolute inset-0 border-4 border-t-gold-500 border-r-transparent border-b-transparent border-l-transparent rounded-full animate-spin">
+            </div>
+            <div
+                class="absolute inset-4 bg-gold-900 rounded-full animate-pulse flex items-center justify-center text-gold-500 font-serif font-bold text-2xl">
+                H</div>
+        </div>
+        <h2 class="text-xl font-serif font-bold text-gold-500 tracking-widest animate-pulse">LEGENDS LOADING</h2>
+    </div>
+
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 transition-all duration-300 bg-antique-900/90 backdrop-blur-md border-b border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <div
+                        class="w-10 h-10 border border-gold-500 rounded-full flex items-center justify-center text-gold-500 font-serif font-bold text-xl shadow-[0_0_15px_rgba(217,119,6,0.5)] group-hover:bg-gold-500 group-hover:text-black transition-all duration-500">
+                        H
+                    </div>
+                    <div>
+                        <h1 class="text-xl md:text-2xl font-serif font-bold text-gold-500 tracking-wider">Trincomalee
+                            History</h1>
+                    </div>
+                </a>
+
+                <div class="flex items-center space-x-1 md:space-x-8">
+                    <a href="index.html"
+                        class="hidden md:inline-block px-4 py-2 text-stone-400 hover:text-gold-400 transition-colors uppercase tracking-widest text-sm">Home</a>
+                    <a href="visit.html"
+                        class="hidden md:inline-block px-4 py-2 text-stone-400 hover:text-gold-400 transition-colors uppercase tracking-widest text-sm">Visit</a>
+                    <a href="history.html"
+                        class="px-4 py-2 text-gold-400 border-b border-gold-500 uppercase tracking-widest text-sm">History</a>
+                    <div id="google_translate_element" class="ml-4"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="relative pt-40 pb-20 text-center px-4">
+        <div
+            class="absolute top-0 left-0 w-full h-full bg-[url('https://upload.wikimedia.org/wikipedia/commons/e/e6/Fort_Fredrick_Trinco.jpg')] bg-cover bg-center opacity-20 mask-image-gradient">
+        </div>
+        <div class="relative z-10">
+            <h1
+                class="font-serif text-5xl md:text-7xl font-bold text-gold-500 mb-6 uppercase tracking-widest drop-shadow-lg">
+                The Legend of Gokanna
+            </h1>
+            <p
+                class="font-sinhala text-xl md:text-2xl text-stone-300 max-w-3xl mx-auto italic leading-relaxed border-y border-gold-500/30 py-8">
+                "පුරාණ ගෝකන්න තොටුපළේ සිට වර්තමාන ත්‍රිකුණාමලය දක්වා වූ ශ්‍රේෂ්ඨ ඉතිහාසය."
+            </p>
+        </div>
+    </header>
+
+    <!-- Timeline -->
+    <main class="max-w-6xl mx-auto px-4 py-12 relative timeline" id="history-container">
+        <!-- Content injected by JS -->
+        <div class="text-center py-20 text-stone-500 font-serif italic text-xl">
+            Loading Historical Archives...
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-antique-900 border-t border-gold-900/50 py-12 text-center text-stone-600 font-serif">
+        <p>© 2026 Trincomalee Heritage. Preserving history.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="history_data.js"></script>
+    <script>
+        // Google Translate
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'si',
+                includedLanguages: 'en,si,ta',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Remove Preloader
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                setTimeout(() => {
+                    preloader.classList.add('opacity-0', 'pointer-events-none');
+                }, 1000);
+            }
+            loadHistory();
+        });
+
+        function loadHistory() {
+            const container = document.getElementById('history-container');
+            const data = window.historyData || [];
+
+            if (data.length === 0) {
+                container.innerHTML = '<div class="text-center text-stone-500">No historic records found.</div>';
+                return;
+            }
+
+            container.innerHTML = '';
+
+            data.forEach((item, index) => {
+                const isLeft = index % 2 === 0;
+
+                const card = document.createElement('div');
+                card.className = `relative flex justify-between items-center w-full mb-16 ${isLeft ? 'flex-row-reverse' : ''}`;
+
+                // Timeline dot
+                const dot = `
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-antique-900 border-2 border-gold-500 shadow-[0_0_15px_rgba(217,119,6,0.8)] z-10 flex items-center justify-center">
+                        <div class="w-3 h-3 bg-gold-400 rounded-full"></div>
+                    </div>
+                `;
+
+                // Content Box
+                const content = `
+                    <div class="w-full md:w-5/12 ${isLeft ? 'text-right md:pr-12' : 'md:pl-12'}">
+                        <div class="group bg-antique-800/80 backdrop-blur border border-gold-900/40 p-6 md:p-8 rounded-lg shadow-xl hover:border-gold-500/50 transition-all duration-500 hover:-translate-y-1 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent opacity-50"></div>
+                            
+                            <h3 class="font-serif text-2xl md:text-3xl text-gold-400 mb-4 font-bold border-b border-white/5 pb-2 inline-block">
+                                ${item.title}
+                            </h3>
+                            
+                            <div class="mb-6 overflow-hidden rounded border border-white/5 h-48 md:h-64">
+                                <img src="${item.image}" alt="${item.title}" 
+                                     class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 sepia-[.3] group-hover:sepia-0"
+                                     onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/e/e6/Fort_Fredrick_Trinco.jpg'">
+                            </div>
+                            
+                            <p class="font-sinhala text-stone-300 leading-loose text-lg font-light">
+                                ${item.content}
+                            </p>
+                        </div>
+                    </div>
+                `;
+
+                // Empty space for the other side
+                const empty = `<div class="w-full md:w-5/12"></div>`;
+
+                if (window.innerWidth >= 768) {
+                    card.innerHTML = isLeft ? content + dot + empty : empty + dot + content;
+                } else {
+                    // Mobile view
+                    card.className = "pl-8 relative mb-12";
+                    card.innerHTML = `
+                         <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-gold-500 border border-antique-900 -ml-2 z-10"></div>
+                         <div class="bg-antique-800/80 border border-gold-900/40 p-6 rounded-lg shadow-lg">
+                            <h3 class="font-serif text-2xl text-gold-400 mb-4 font-bold">${item.title}</h3>
+                            <div class="mb-4 rounded overflow-hidden h-48"><img src="${item.image}" class="w-full h-full object-cover sepia-0"></div>
+                            <p class="font-sinhala text-stone-300 leading-relaxed">${item.content}</p>
+                         </div>
+                    `;
+                }
+
+                container.appendChild(card);
+            });
+        }
+    </script>
+</body>
+
+</html>

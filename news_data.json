@@ -1,0 +1,23 @@
+[
+    {
+        "id": "2026-02-17",
+        "date": "2026-02-17",
+        "title": "Trincomalee Harbor Development Project Kicks Off",
+        "image": "https://images.unsplash.com/photo-1588528292866-51f228d70954?q=80&w=2070&auto=format&fit=crop",
+        "contentFile": "news/2026-02-17/details.txt"
+    },
+    {
+        "id": "2026-02-16",
+        "date": "2026-02-16",
+        "title": "Local Fishermen Report Record Catch",
+        "image": "https://images.unsplash.com/photo-1534234828563-02511c750d4d?q=80&w=1974&auto=format&fit=crop",
+        "contentFile": "news/2026-02-16/details.txt"
+    },
+    {
+        "id": "2026-02-15",
+        "date": "2026-02-15",
+        "title": "Cultural Festival Announced for Next Month",
+        "image": "https://images.unsplash.com/photo-1590422112444-a39cce54df23?q=80&w=2070&auto=format&fit=crop",
+        "contentFile": "news/2026-02-15/details.txt"
+    }
+]
