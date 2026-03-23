@@ -1,7 +1,7 @@
 ﻿window.historyData = [
     {
         title: "Ancient Port",
-        image: "History/Ancient Port/Image-1.gif",
+        image: "History/Ancient Port/image.jpg.gif",
         content: `Ancient Port (පුරාණ වරාය)
 
 Trincomalee's natural deep-water harbor has made it a target for sea battles for centuries. It was known as Gokanna in ancient times.
@@ -11,7 +11,7 @@ Trincomalee's natural deep-water harbor has made it a target for sea battles for
     },
     {
         title: "Fort Frederick",
-        image: "History/Fort Frederick/Fort-fedrick.jpg",
+        image: "History/Fort Frederick/image.jpg",
         content: `Fort Frederick (ෆෙඩ්රික් කොටුව)
 
 Built by the Portuguese in 1624, Fort Frederick is a fort located on Swami Rock. It has been held by the Portuguese, Dutch, French, and British.
