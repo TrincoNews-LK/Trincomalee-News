@@ -60,10 +60,10 @@
                             '100%': { opacity: '1', transform: 'scale(1) translateY(0)' },
                         },
                         blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '0%': { transform: 'translate(0px, 0px) scale(1)', opacity: '0.1' },
+                            '33%': { transform: 'translate(40px, -60px) scale(1.2)', opacity: '0.6' },
+                            '66%': { transform: 'translate(-30px, 30px) scale(0.8)', opacity: '0.2' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)', opacity: '0.1' },
                         },
                         textBlink: {
                             '0%, 100%': { opacity: '1' },
@@ -111,7 +111,7 @@
         }
 
         .bg-overlay {
-            background: linear-gradient(-45deg, rgba(10, 15, 30, 0.96), rgba(15, 23, 42, 0.92), rgba(2, 60, 100, 0.3), rgba(5, 10, 20, 0.98));
+            background: linear-gradient(-45deg, rgba(5, 8, 15, 0.98), rgba(8, 12, 24, 0.96), rgba(2, 20, 40, 0.85), rgba(2, 5, 10, 0.99));
             background-size: 400% 400%;
             animation: gradientBG 20s ease infinite;
         }
@@ -205,15 +205,18 @@
     <!-- Hero Section -->
     <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-            <!-- Blobs (Dark Premium) -->
+            <!-- Premium Glowing Blobs -->
             <div
-                class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-brand-900/40 rounded-full mix-blend-overlay filter blur-[100px] opacity-40 animate-blob">
+                class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-brand-500/30 rounded-full mix-blend-screen filter blur-[100px] animate-blob" style="animation-duration: 8s; animation-delay: 0s;">
             </div>
             <div
-                class="absolute top-0 left-0 -mt-20 -ml-20 w-96 h-96 bg-indigo-900/40 rounded-full mix-blend-overlay filter blur-[100px] opacity-40 animate-blob animation-delay-2000">
+                class="absolute top-0 left-0 -mt-20 -ml-20 w-96 h-96 bg-indigo-500/30 rounded-full mix-blend-screen filter blur-[100px] animate-blob" style="animation-duration: 10s; animation-delay: 2s;">
             </div>
             <div
-                class="absolute bottom-0 left-1/3 w-96 h-96 bg-blue-900/40 rounded-full mix-blend-overlay filter blur-[100px] opacity-40 animate-blob animation-delay-4000">
+                class="absolute bottom-0 left-1/3 w-96 h-96 bg-blue-500/30 rounded-full mix-blend-screen filter blur-[100px] animate-blob" style="animation-duration: 12s; animation-delay: 4s;">
+            </div>
+            <div
+                class="absolute top-1/2 right-1/4 w-64 h-64 bg-purple-500/20 rounded-full mix-blend-screen filter blur-[90px] animate-blob" style="animation-duration: 9s; animation-delay: 3s;">
             </div>
         </div>
 
