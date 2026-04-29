@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     createParticles(); // Inject advanced animated background
+    initPremiumAnimations();
     loadNews();
 
     // Search functionality
@@ -157,15 +158,15 @@ function scrollToNews() {
 
 function createParticles() {
     const container = document.createElement('div');
-    container.className = 'fixed inset-0 pointer-events-none z-[0] overflow-hidden'; // z-0 so it sits behind cards
-    for (let i = 0; i < 25; i++) {
+    container.className = 'fixed inset-0 pointer-events-none z-[0] overflow-hidden'; 
+    for (let i = 0; i < 40; i++) {
         const particle = document.createElement('div');
-        particle.className = 'absolute rounded-full opacity-20';
+        particle.className = 'absolute rounded-full';
         
-        const size = Math.random() * 150 + 50; 
+        const size = Math.random() * 60 + 10; 
         const posX = Math.random() * 100;
         const posY = Math.random() * 100;
-        const duration = Math.random() * 20 + 15;
+        const duration = Math.random() * 30 + 20;
         const delay = Math.random() * 5;
         
         particle.style.width = `${size}px`;
@@ -173,15 +174,16 @@ function createParticles() {
         particle.style.left = `${posX}%`;
         particle.style.top = `${posY}%`;
         
-        const colors = ['#38bdf8', '#818cf8', '#c084fc', '#2dd4bf'];
+        // Deep, rich colors for dark premium look
+        const colors = ['rgba(14, 165, 233, 0.15)', 'rgba(79, 70, 229, 0.15)', 'rgba(56, 189, 248, 0.1)', 'rgba(99, 102, 241, 0.1)'];
         const color = colors[Math.floor(Math.random() * colors.length)];
         
-        particle.style.background = `radial-gradient(circle, ${color} 0%, transparent 60%)`;
-        particle.style.filter = 'blur(15px)';
+        particle.style.background = `radial-gradient(circle, ${color} 0%, transparent 70%)`;
+        particle.style.filter = 'blur(8px)';
         
         particle.animate([
             { transform: 'translate(0, 0) scale(1)', opacity: 0.1 },
-            { transform: `translate(${Math.random()*300 - 150}px, ${Math.random()*300 - 150}px) scale(1.3)`, opacity: 0.6 },
+            { transform: `translate(${Math.random()*150 - 75}px, ${Math.random()*150 - 75}px) scale(1.5)`, opacity: 0.8 },
             { transform: 'translate(0, 0) scale(1)', opacity: 0.1 }
         ], {
             duration: duration * 1000,
@@ -194,7 +196,6 @@ function createParticles() {
         container.appendChild(particle);
     }
     
-    // Check if bg-overlay exists to insert after it, else body prepend
     const overlay = document.querySelector('.bg-overlay');
     if (overlay) {
         overlay.insertAdjacentElement('afterend', container);
@@ -326,4 +327,76 @@ function closeNewsModal() {
     modal.querySelector('div:nth-child(2)').classList.add('scale-95');
     modal.querySelector('div:nth-child(2)').classList.remove('scale-100');
     document.body.style.overflow = '';
+}
+
+function initPremiumAnimations() {
+    const titleEl = document.getElementById('hero-title');
+    const descEl = document.getElementById('hero-desc');
+    
+    if (titleEl) {
+        titleEl.innerHTML = '';
+        titleEl.classList.remove('opacity-0');
+        
+        const line1 = document.createElement('span');
+        const br = document.createElement('br');
+        const line2 = document.createElement('span');
+        line2.className = 'text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-indigo-400 filter drop-shadow-lg';
+        
+        const cursor = document.createElement('span');
+        cursor.className = 'inline-block w-1 md:w-2 h-10 md:h-14 bg-brand-400 ml-2 animate-pulse align-middle translate-y-[-4px] md:translate-y-[-8px]';
+        
+        titleEl.appendChild(line1);
+        titleEl.appendChild(cursor);
+        
+        const text1 = "Trincomalee";
+        const text2 = "News Update";
+        
+        let i = 0;
+        let j = 0;
+        
+        function typeWriter() {
+            if (i < text1.length) {
+                line1.innerHTML += text1.charAt(i);
+                i++;
+                setTimeout(typeWriter, 120);
+            } else if (i === text1.length) {
+                titleEl.insertBefore(br, cursor);
+                titleEl.insertBefore(line2, cursor);
+                i++;
+                setTimeout(typeWriter, 400); // Pause before typing the second line
+            } else if (j < text2.length) {
+                line2.innerHTML += text2.charAt(j);
+                j++;
+                setTimeout(typeWriter, 100);
+            } else {
+                cursor.classList.add('opacity-50');
+                animateDescription();
+            }
+        }
+        
+        // Start typing after a short delay so the preloader can fade
+        setTimeout(typeWriter, 600);
+    }
+    
+    function animateDescription() {
+        if (!descEl) return;
+        descEl.classList.remove('opacity-0');
+        
+        const text = "The latest special events and important news from our beautiful Trincomalee will be updated directly for your information";
+        descEl.innerHTML = '';
+        
+        const words = text.split(' ');
+        words.forEach((word, idx) => {
+            const span = document.createElement('span');
+            // Advanced premium blur-up reveal effect
+            span.className = 'inline-block opacity-0 transform translate-y-6 blur-sm transition-all duration-700 ease-out';
+            span.innerText = word + ' ';
+            descEl.appendChild(span);
+            
+            setTimeout(() => {
+                span.classList.remove('opacity-0', 'translate-y-6', 'blur-sm');
+                span.classList.add('opacity-100', 'translate-y-0', 'blur-none');
+            }, idx * 60); // Staggering effect for each word
+        });
+    }
 }
