@@ -160,7 +160,7 @@ function createParticles() {
     container.className = 'fixed inset-0 pointer-events-none z-[0] overflow-hidden'; // z-0 so it sits behind cards
     for (let i = 0; i < 25; i++) {
         const particle = document.createElement('div');
-        particle.className = 'absolute rounded-full mix-blend-screen opacity-40';
+        particle.className = 'absolute rounded-full opacity-20';
         
         const size = Math.random() * 150 + 50; 
         const posX = Math.random() * 100;
